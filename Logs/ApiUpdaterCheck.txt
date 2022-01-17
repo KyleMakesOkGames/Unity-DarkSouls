@@ -1,0 +1,77 @@
+[api-updater (non-obsolete-error-filter)] 2022-01-11 2:04:02 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 318.4486ms
+moved types parse time: 118ms
+candidates parse time : 2ms
+C# parse time         : 378ms
+candidates check time : 65ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-11 2:04:39 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 341.6168ms
+moved types parse time: 148ms
+candidates parse time : 5ms
+C# parse time         : 522ms
+candidates check time : 90ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-11 2:04:42 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 314.9051ms
+moved types parse time: 238ms
+candidates parse time : 5ms
+C# parse time         : 514ms
+candidates check time : 89ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-12 2:25:40 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 410.5978ms
+moved types parse time: 227ms
+candidates parse time : 4ms
+C# parse time         : 738ms
+candidates check time : 147ms
+console write time    : 2ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-14 12:56:04 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 97.167ms
+moved types parse time: 59ms
+candidates parse time : 1ms
+C# parse time         : 235ms
+candidates check time : 41ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-14 12:56:10 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 86.4106ms
+moved types parse time: 61ms
+candidates parse time : 2ms
+C# parse time         : 221ms
+candidates check time : 37ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 2022-01-15 11:24:39 PM : Starting C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] Exception caught while loading types from C:\Users\kyle-\Downloads\RPG DARKSOULS\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll (some types may not be loaded)
+	Exception of type 'System.Reflection.ReflectionTypeLoadException' was thrown.
+	  at (wrapper managed-to-native) System.Reflection.Assembly.GetTypes(System.Reflection.Assembly,bool)
+  at System.Reflection.Assembly.GetTypes () [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at APIUpdater.NonObsoleteApiUpdaterDetector.ExtraInfoParser+<LoadTypesWithMovedFromAttributeAsync>d__3.MoveNext () [0x000c8] in <68bff7873e0e4aa69a14dfc30bebbe3e>:0 
+	Could not load file or assembly 'UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 146.4922ms
+moved types parse time: 122ms
+candidates parse time : 3ms
+C# parse time         : 344ms
+candidates check time : 182ms
+console write time    : 0ms
+
