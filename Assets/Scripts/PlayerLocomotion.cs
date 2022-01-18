@@ -68,22 +68,34 @@ namespace KA
         {
             if (inputHandler.lockOnFlag)
             {
-
-                Vector3 targetDirection = Vector3.zero;
-                targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
-                targetDirection += cameraHandler.cameraTransform.right * inputHandler.horizontal;
-                targetDirection.Normalize();
-                targetDirection.y = 0;
-
-                if(targetDirection == Vector3.zero)
+                if(inputHandler.sprintFlag || inputHandler.rollFlag)
                 {
-                    targetDirection = transform.forward;
+                    Vector3 targetDirection = Vector3.zero;
+                    targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
+                    targetDirection += cameraHandler.cameraTransform.right * inputHandler.horizontal;
+                    targetDirection.Normalize();
+                    targetDirection.y = 0;
+
+                    if (targetDirection == Vector3.zero)
+                    {
+                        targetDirection = transform.forward;
+                    }
+
+                    Quaternion tr = Quaternion.LookRotation(targetDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * delta);
+
+                    transform.rotation = targetRotation;
                 }
-
-                Quaternion tr = Quaternion.LookRotation(targetDirection);
-                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * delta);
-
-                transform.rotation = targetRotation;
+                else
+                {
+                    Vector3 rotationDirection = moveDirection;
+                    rotationDirection = cameraHandler.currentLockOnTarget.position - transform.position;
+                    rotationDirection.y = 0;
+                    rotationDirection.Normalize();
+                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * delta);
+                    transform.rotation = targetRotation;
+                }
             } 
             else
             {

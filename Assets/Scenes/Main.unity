@@ -160,7 +160,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17912
+  m_Name: pb_Mesh17914
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -488,7 +488,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17862
+  m_Name: pb_Mesh17864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 184332559}
   - component: {fileID: 184332558}
   - component: {fileID: 184332557}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 185600029}
   - component: {fileID: 185600028}
   - component: {fileID: 185600027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17928
+  m_Name: pb_Mesh17930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 757832818}
   - component: {fileID: 757832817}
   - component: {fileID: 757832816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,7 +2048,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17952
+  m_Name: pb_Mesh17954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2219,7 +2219,7 @@ GameObject:
   - component: {fileID: 834379491}
   - component: {fileID: 834379490}
   - component: {fileID: 834379489}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4417,7 +4417,7 @@ GameObject:
   - component: {fileID: 842180944}
   - component: {fileID: 842180943}
   - component: {fileID: 842180942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4730,7 +4730,7 @@ GameObject:
   - component: {fileID: 901223051}
   - component: {fileID: 901223050}
   - component: {fileID: 901223049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,7 +5059,7 @@ GameObject:
   - component: {fileID: 940795482}
   - component: {fileID: 940795481}
   - component: {fileID: 940795480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7280,7 +7280,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17968
+  m_Name: pb_Mesh17970
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7444,7 +7444,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17996
+  m_Name: pb_Mesh18000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7682,7 +7682,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17874
+  m_Name: pb_Mesh17876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7853,7 +7853,7 @@ GameObject:
   - component: {fileID: 1787311398}
   - component: {fileID: 1787311397}
   - component: {fileID: 1787311396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8159,7 +8159,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17940
+  m_Name: pb_Mesh17942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8352,6 +8352,9 @@ MonoBehaviour:
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 0
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 0
   lookSpeed: 0.001
   followSpeed: 0.1
   pivotSpeed: 0.001
@@ -8360,6 +8363,8 @@ MonoBehaviour:
   cameraSphereRadius: 0.2
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
+  lockPivotPosition: 2.25
+  unlockedPivotPosition: 1.65
   currentLockOnTarget: {fileID: 0}
   nearestLockOnTarget: {fileID: 0}
   leftLockTarget: {fileID: 0}
@@ -8393,7 +8398,7 @@ GameObject:
   - component: {fileID: 1947475980}
   - component: {fileID: 1947475979}
   - component: {fileID: 1947475978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8818,13 +8823,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 491609928100373031, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1356788013677742455, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402545116453678036, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2889122334169878201, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8994,7 +9015,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7993142642872443023, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+    - target: {fileID: 5889944128379777968, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516518064247217142, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

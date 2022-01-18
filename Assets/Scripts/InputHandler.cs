@@ -217,6 +217,8 @@ namespace KA
                     cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
                 }
             }
+
+            cameraHandler.SetCameraHeight();
         }
     }
 }
