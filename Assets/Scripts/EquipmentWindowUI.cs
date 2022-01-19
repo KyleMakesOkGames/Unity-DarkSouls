@@ -11,18 +11,18 @@ namespace KA
         public bool leftHandSlot01Selected;
         public bool leftHandSlot02Selected;
 
-        HandEquipmentSlotUI[] handEquipmentSlotUI;
+        public HandEquipmentSlotUI[] handEquipmentSlotUI;
 
         private void Start()
         {
-            handEquipmentSlotUI = GetComponentsInChildren<HandEquipmentSlotUI>();
+
         }
 
         public void LoadWeaponOnEquipmentScreen(PlayerInventory playerInventory)
         {
             for (int i = 0; i < handEquipmentSlotUI.Length; i++)
             {
-                if(handEquipmentSlotUI[i].rightHandSlot01)
+                if (handEquipmentSlotUI[i].rightHandSlot01)
                 {
                     handEquipmentSlotUI[i].AddItem(playerInventory.weaponsInRightHandSlots[0]);
                 }
@@ -56,7 +56,7 @@ namespace KA
             leftHandSlot01Selected = true;
         }
 
-        public void SelectLefttHandSlot02()
+        public void SelectLeftHandSlot02()
         {
             leftHandSlot02Selected = true;
         }

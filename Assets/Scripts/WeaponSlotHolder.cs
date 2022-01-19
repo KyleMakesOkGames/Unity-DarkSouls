@@ -6,8 +6,8 @@ namespace KA
     public class WeaponSlotHolder : MonoBehaviour
     {
         public Transform parentOverride;
-        public bool isRightHandSlot;
         public bool isLeftHandSlot;
+        public bool isRightHandSlot;
 
         public GameObject currentWeaponModel;
 
@@ -23,7 +23,7 @@ namespace KA
         {
             if (currentWeaponModel != null)
             {
-                DestroyImmediate(currentWeaponModel);
+                Destroy(currentWeaponModel);
             }
         }
 
@@ -33,11 +33,10 @@ namespace KA
 
             if (weaponItem == null)
             {
-                //unload the weapon model
-
                 UnloadWeapon();
                 return;
             }
+
             GameObject model = Instantiate(weaponItem.modelPrefab) as GameObject;
             if (model != null)
             {

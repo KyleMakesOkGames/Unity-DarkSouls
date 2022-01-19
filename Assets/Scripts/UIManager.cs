@@ -13,6 +13,13 @@ namespace KA
         public GameObject hudWindow;
         public GameObject selectWindow;
         public GameObject weaponInventoryWindow;
+        public GameObject equipmentScreenWindow;
+
+        [Header("Equipment Window Slots")]
+        public bool rightHandSlot01Selected;
+        public bool rightHandSlot02Selected;
+        public bool leftHandSlot01Selected;
+        public bool leftHandSlot02Selected;
 
         [Header("Weapons Inventory")]
         public GameObject weaponInventorySlotPrefab;
@@ -27,6 +34,7 @@ namespace KA
         private void Start()
         {
             weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+            equipmentWindowUI.LoadWeaponOnEquipmentScreen(playerInventory);
         }
 
         public void UpdateUI()
@@ -34,7 +42,7 @@ namespace KA
             #region Weapon Inventory Slots
             for (int i = 0; i < weaponInventorySlots.Length; i++)
             {
-                if(i < playerInventory.weaponInventory.Count)
+                if (i < playerInventory.weaponInventory.Count)
                 {
                     if (weaponInventorySlots.Length < playerInventory.weaponInventory.Count)
                     {
@@ -64,6 +72,15 @@ namespace KA
         public void CloseAllInventoryWindows()
         {
             weaponInventoryWindow.SetActive(false);
+            equipmentScreenWindow.SetActive(false);
+        }
+
+        public void ResetAllSelectedSlots()
+        {
+            rightHandSlot01Selected = false;
+            rightHandSlot02Selected = false;
+            leftHandSlot01Selected = false;
+            leftHandSlot02Selected = false;
         }
     }
 }
