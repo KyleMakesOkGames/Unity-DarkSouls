@@ -24,17 +24,18 @@ namespace KA
             {
                 animatorHandler.anim.SetBool("canDoCombo", false);
 
-                if(lastAttack == weapon.OH_Light_Attack_1)
+                if (lastAttack == weapon.OH_Light_Attack_1)
                 {
                     animatorHandler.PlayTargetAnimation(weapon.OH_Light_Attack_2, true);
                 }
-                else if(lastAttack == weapon.OH_Heavy_Attack_1)
-                {
-                    animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_2, true);
-                }
-                else if(lastAttack == weapon.TH_Light_Attack_1)
+                else if (lastAttack == weapon.TH_Light_Attack_1)
                 {
                     animatorHandler.PlayTargetAnimation(weapon.TH_Light_Attack_2, true);
+                }
+
+                if(lastAttack == weapon.OH_Heavy_Attack_1)
+                {
+                    animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_2, true);
                 }
                 else if(lastAttack == weapon.TH_Heavy_Attack_1)
                 {
