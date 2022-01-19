@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &63564668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63564669}
+  - component: {fileID: 63564670}
+  m_Layer: 10
+  m_Name: Back Weapon Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63564669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63564668}
+  m_LocalRotation: {x: -0.019101024, y: -0.83596915, z: -0.029156087, w: 0.5476684}
+  m_LocalPosition: {x: -0.071, y: 0.235, z: -0.206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7535949413677269857}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -3.995, y: -113.54, z: 0}
+--- !u!114 &63564670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63564668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f9dd66651b0fe42a868519e96465d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 63564669}
+  currentWeapon: {fileID: 0}
+  isLeftHandSlot: 0
+  isRightHandSlot: 0
+  isBackSlot: 1
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &1484830488
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,13 +102,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942632927386021668}
-  m_LocalRotation: {x: 0.92007405, y: 0.34556368, z: 0.18398094, w: -0.014156754}
+  m_LocalRotation: {x: 0.9337771, y: 0.35421795, z: 0.048067354, w: -0.01672371}
   m_LocalPosition: {x: -0.249, y: -0.074, z: 0.005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7532859834083638617}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -8.813, y: 160.568, z: 140.341}
+  m_LocalEulerAnglesHint: {x: -3.743, y: 175.521, z: 138.599}
 --- !u!114 &6160578829324998021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentOverride: {fileID: 9124805102715972297}
+  currentWeapon: {fileID: 0}
   isLeftHandSlot: 1
   isRightHandSlot: 0
+  isBackSlot: 0
   currentWeaponModel: {fileID: 0}
 --- !u!114 &9133276802936492320
 MonoBehaviour:
@@ -89,8 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentOverride: {fileID: 7533136325702470079}
+  currentWeapon: {fileID: 0}
   isLeftHandSlot: 0
   isRightHandSlot: 1
+  isBackSlot: 0
   currentWeaponModel: {fileID: 0}
 --- !u!114 &283927743848235634
 MonoBehaviour:
@@ -226,10 +279,10 @@ MonoBehaviour:
   unarmedWeapon: {fileID: 11400000, guid: 628519d461bbab646be6d08e565baa4a, type: 2}
   weaponsInRightHandSlots:
   - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
-  - {fileID: 11400000, guid: aa3487f1ebab080499bca459219a7448, type: 2}
+  - {fileID: 11400000, guid: d7276fba30da54d47bdfd5215ba79eb1, type: 2}
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
-  - {fileID: 11400000, guid: aa3487f1ebab080499bca459219a7448, type: 2}
+  - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
   weaponInventory: []
@@ -3948,6 +4001,11 @@ GameObject:
 --- !u!4 &7535708095004621329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9010506898052249916, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+  m_PrefabInstance: {fileID: 1558235432076264237}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7535949413677269857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9010265578372939852, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
   m_PrefabInstance: {fileID: 1558235432076264237}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7530088168082971841 stripped

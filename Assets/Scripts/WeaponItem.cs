@@ -17,7 +17,16 @@ namespace KA
         [Header("One Handed Attacks")]
         public string OH_Light_Attack_1;
         public string OH_Light_Attack_2;
+        public string OH_Light_Attack_3;
         public string OH_Heavy_Attack_1;
+        public string OH_Heavy_Attack_2;
+
+        [Header("Two Handed Attacks")]
+        public string TH_Light_Attack_1;
+        public string TH_Light_Attack_2;
+        public string TH_Light_Attack_3;
+        public string TH_Heavy_Attack_1;
+        public string TH_Heavy_Attack_2;
 
         [Header("Stamina Drain Costs")]
         public int baseStamina;

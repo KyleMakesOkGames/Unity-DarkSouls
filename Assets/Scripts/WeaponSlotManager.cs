@@ -8,6 +8,7 @@ namespace KA
     {
         WeaponSlotHolder leftHandSlot;
         WeaponSlotHolder rightHandSlot;
+        WeaponSlotHolder backSlot;
 
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
@@ -42,6 +43,10 @@ namespace KA
                 {
                     rightHandSlot = weaponSlot;
                 }
+                else if(weaponSlot.isBackSlot)
+                {
+                    backSlot = weaponSlot;
+                }
             }
         }
 
@@ -49,6 +54,7 @@ namespace KA
         {
             if (isLeft)
             {
+                leftHandSlot.currentWeapon = weaponItem;
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 LoadLeftWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
@@ -67,7 +73,8 @@ namespace KA
             {
                 if (inputHandler.twoHandFlag)
                 {
-                    //Move current left hand weapon to the back or disable it
+                    backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
+                    leftHandSlot.UnloadWeaponAndDestroy();
                     animator.CrossFade(weaponItem.TH_Idle, 0.2f);
                 }
                 else
@@ -75,7 +82,7 @@ namespace KA
                     #region Handle Right Weapon Idle Animations
 
                     animator.CrossFade("Both Arms Empty", 0.2f);
-
+                    backSlot.UnloadWeaponAndDestroy();
                     if (weaponItem != null)
                     {
                         animator.CrossFade(weaponItem.right_Hand_Idle, 0.2f);
@@ -86,7 +93,7 @@ namespace KA
                     }
                     #endregion
                 }
-
+                rightHandSlot.currentWeapon = weaponItem;
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 LoadRightWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
