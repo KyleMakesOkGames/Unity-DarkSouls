@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentOverride: {fileID: 9124805102715972297}
-  isRightHandSlot: 0
   isLeftHandSlot: 1
+  isRightHandSlot: 0
   currentWeaponModel: {fileID: 0}
 --- !u!114 &9133276802936492320
 MonoBehaviour:
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentOverride: {fileID: 7533136325702470079}
-  isRightHandSlot: 1
   isLeftHandSlot: 0
+  isRightHandSlot: 1
   currentWeaponModel: {fileID: 0}
 --- !u!114 &283927743848235634
 MonoBehaviour:
@@ -190,6 +190,7 @@ MonoBehaviour:
   mouseY: 0
   b_Input: 0
   y_Input: 0
+  x_Input: 0
   rb_Input: 0
   rt_Input: 0
   jump_Input: 0
@@ -202,6 +203,7 @@ MonoBehaviour:
   d_Pad_Left: 0
   d_Pad_Right: 0
   rollFlag: 0
+  twoHandFlag: 0
   sprintFlag: 0
   comboFlag: 0
   lockOnFlag: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 432725bbdd8b16a458951dc289138876, type: 3}
-  m_Name: Sword
+  m_Name: Butcher Sword
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 815a721f08be39648b518316561da954, type: 3}
-  itemName: Sword
-  modelPrefab: {fileID: 606200968384958666, guid: 4cbd2f2b1ecb12b46987017514d9966a, type: 3}
+  itemIcon: {fileID: -6947836213117473343, guid: faba03bbe7d2bd240a7612300dbafe7a, type: 3}
+  itemName: Butcher Sword
+  modelPrefab: {fileID: 300357934486427815, guid: 10327d8fe9496754ea771cba855f35c0, type: 3}
   isUnarmed: 0
   right_Hand_Idle: Right_Arm_Idle_01
   left_Hand_Idle: Left_Arm_Idle_01
