@@ -4,12 +4,8 @@ using UnityEngine;
 
 namespace KA
 {
-    public class PlayerStats : MonoBehaviour
+    public class PlayerStats : CharacterStats
     {
-        public int healthLevel;
-        public int maxHealth;
-        public int currentHealth;
-
         public int staminaLevel;
         public int maxStamina;
         public int currentStamina;
