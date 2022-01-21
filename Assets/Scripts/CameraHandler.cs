@@ -53,7 +53,7 @@ namespace KA
 
         private void Start()
         {
-            environmentLayer = LayerMask.NameToLayer("Environment");
+
         }
 
         public void FollowTarget(float delta)
@@ -85,7 +85,7 @@ namespace KA
             }
             else
             {
-                float velocity = 0;
+                //float velocity = 0;
 
                 Vector3 dir = currentLockOnTarget.position - transform.position;
                 dir.Normalize();
