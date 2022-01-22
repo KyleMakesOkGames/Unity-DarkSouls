@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63564668}
   m_LocalRotation: {x: -0.019101024, y: -0.83596915, z: -0.029156087, w: 0.5476684}
-  m_LocalPosition: {x: -0.071, y: 0.235, z: -0.206}
+  m_LocalPosition: {x: -0.0746, y: 0.1746, z: -0.2078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7535949413677269857}
@@ -103,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942632927386021668}
   m_LocalRotation: {x: 0.9337771, y: 0.35421795, z: 0.048067354, w: -0.01672371}
-  m_LocalPosition: {x: -0.249, y: -0.074, z: 0.005}
+  m_LocalPosition: {x: -0.181, y: -0.097, z: 0.011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7532859834083638617}
@@ -171,10 +171,10 @@ GameObject:
   - component: {fileID: 8918176394304980998}
   - component: {fileID: 8195003761832990611}
   - component: {fileID: 6210010102106405742}
+  - component: {fileID: 1575651867783713990}
   - component: {fileID: 6808860019063928319}
   - component: {fileID: 8918176394304981051}
   - component: {fileID: 8918176394304981049}
-  - component: {fileID: 1575651867783713990}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -282,7 +282,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7276fba30da54d47bdfd5215ba79eb1, type: 2}
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
-  - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
+  - {fileID: 11400000, guid: be6cbd099b734e94b9ae1203b0d95de4, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
   weaponInventory: []
@@ -306,6 +306,19 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   canDoCombo: 0
+--- !u!114 &1575651867783713990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918176394304981050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b523b757c1ce1874788577cf60149786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastAttack: 
 --- !u!114 &6808860019063928319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,19 +368,6 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1575651867783713990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8918176394304981050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b523b757c1ce1874788577cf60149786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastAttack: 
 --- !u!1001 &1558235432076264237
 PrefabInstance:
   m_ObjectHideFlags: 0

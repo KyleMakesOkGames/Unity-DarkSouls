@@ -1,4 +1,6 @@
 Base path: 'C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data', plugins path 'C:/Users/kyle-/Desktop/2020.3.18f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
+Cmd: initializeCompiler
+
 Cmd: shutdown

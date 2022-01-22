@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Bits: 0
   environmentLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   lookSpeed: 0.03
   followSpeed: 0.1
   pivotSpeed: 0.08
@@ -61,8 +61,8 @@ MonoBehaviour:
   cameraSphereRadius: 0.2
   cameraCollisionOffSet: 0.2
   minimumCollisionOffset: 0.2
-  lockPivotPosition: 2.25
-  unlockedPivotPosition: 1.65
+  lockPivotPosition: 2
+  unlockedPivotPosition: 1.5
   currentLockOnTarget: {fileID: 0}
   nearestLockOnTarget: {fileID: 0}
   leftLockTarget: {fileID: 0}
