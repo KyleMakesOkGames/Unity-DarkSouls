@@ -6,12 +6,13 @@ namespace KA
     public class IdleState : State
     {
         public PursueTargetState pursueTargetState;
+
         public LayerMask detectionLayer;
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorHandler enemyAnimatorHandler)
         {
+            #region Handle Enemy Target Detection
             Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
-
             for (int i = 0; i < colliders.Length; i++)
             {
                 CharacterStats characterStats = colliders[i].transform.GetComponent<CharacterStats>();
@@ -26,11 +27,13 @@ namespace KA
                     if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
                     {
                         enemyManager.currentTarget = characterStats;
-                        return pursueTargetState;
                     }
                 }
             }
-            if(enemyManager.currentTarget != null)
+            #endregion
+
+            #region Handle Switching To Next State
+            if (enemyManager.currentTarget != null)
             {
                 return pursueTargetState;
             }
@@ -38,6 +41,8 @@ namespace KA
             {
                 return this;
             }
+            #endregion
+
         }
     }
 }

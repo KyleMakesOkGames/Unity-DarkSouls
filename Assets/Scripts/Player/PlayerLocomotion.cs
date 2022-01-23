@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace KA
 {
@@ -21,25 +19,28 @@ namespace KA
 
         [Header("Ground & Air Detection Stats")]
         [SerializeField]
-        private float groundDetectionRayStartPoint = 0.5f;
+        float groundDetectionRayStartPoint = 0.5f;
         [SerializeField]
-        private float minimumDistanceNeededToBeginFall = 1f;
+        float minimumDistanceNeededToBeginFall = 1f;
         [SerializeField]
-        private float groundDirectionRayDistance = 0.2f;
+        float groundDirectionRayDistance = 0.2f;
         LayerMask ignoreForGroundCheck;
         public float inAirTimer;
 
         [Header("Movement Stats")]
         [SerializeField]
-        private float movementSpeed = 5;
+        float movementSpeed = 5;
         [SerializeField]
-        private float walkingSpeed = 1;
+        float walkingSpeed = 1;
         [SerializeField]
-        private float sprintSpeed = 7;
+        float sprintSpeed = 7;
         [SerializeField]
-        private float rotationSpeed = 10;
+        float rotationSpeed = 10;
         [SerializeField]
-        private float fallingSpeed = 45;
+        float fallingSpeed = 45;
+
+        public CapsuleCollider characterCollider;
+        public CapsuleCollider characterCollisionBlockerCollider;
 
         private void Awake()
         {
@@ -58,6 +59,8 @@ namespace KA
 
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+            Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
+
         }
 
         #region Movement
@@ -68,7 +71,7 @@ namespace KA
         {
             if (inputHandler.lockOnFlag)
             {
-                if(inputHandler.sprintFlag || inputHandler.rollFlag)
+                if (inputHandler.sprintFlag || inputHandler.rollFlag)
                 {
                     Vector3 targetDirection = Vector3.zero;
                     targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
@@ -82,7 +85,7 @@ namespace KA
                     }
 
                     Quaternion tr = Quaternion.LookRotation(targetDirection);
-                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * delta);
+                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
 
                     transform.rotation = targetRotation;
                 }
@@ -93,10 +96,10 @@ namespace KA
                     rotationDirection.y = 0;
                     rotationDirection.Normalize();
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);
-                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * delta);
+                    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
                     transform.rotation = targetRotation;
                 }
-            } 
+            }
             else
             {
                 Vector3 targetDir = Vector3.zero;
@@ -158,7 +161,7 @@ namespace KA
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
-            if(inputHandler.lockOnFlag)
+            if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
             {
                 animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
             }
@@ -233,6 +236,7 @@ namespace KA
                 {
                     if (inAirTimer > 0.5f)
                     {
+                        Debug.Log("You were in the air for " + inAirTimer);
                         animatorHandler.PlayTargetAnimation("Land", true);
                         inAirTimer = 0;
                     }
@@ -294,7 +298,6 @@ namespace KA
                 }
             }
         }
-
         #endregion
     }
 }
