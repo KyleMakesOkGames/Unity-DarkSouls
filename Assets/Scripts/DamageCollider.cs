@@ -30,7 +30,25 @@ namespace KA
 
         private void OnTriggerEnter(Collider other)
         {
-            
+            if(other.tag == "Player")
+            {
+                PlayerStats playerStats = other.GetComponent<PlayerStats>();
+
+                if(playerStats != null)
+                {
+                    playerStats.TakeDamage(currentWeaponDamage);
+                }
+            }
+
+            if(other.tag == "Enemy")
+            {
+                EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+
+                if(enemyStats != null)
+                {
+                    enemyStats.TakeDamage(currentWeaponDamage);
+                }
+            }
         }
     }
 }

@@ -9,5 +9,7 @@ namespace KA
         public int healthLevel;
         public int maxHealth;
         public int currentHealth;
+
+        public bool isDead;
     }
 }

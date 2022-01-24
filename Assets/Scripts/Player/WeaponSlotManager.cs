@@ -6,6 +6,8 @@ namespace KA
 {
     public class WeaponSlotManager : MonoBehaviour
     {
+        private PlayerManager playerManager;
+
         WeaponSlotHolder leftHandSlot;
         WeaponSlotHolder rightHandSlot;
         WeaponSlotHolder backSlot;
@@ -24,6 +26,7 @@ namespace KA
 
         private void Awake()
         {
+            playerManager = GetComponentInParent<PlayerManager>();
             animator = GetComponent<Animator>();
 
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
@@ -111,23 +114,21 @@ namespace KA
             rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
         }
 
-        public void OpenRightDamageCollider()
+        public void OpenDamageCollider()
         {
-            rightHandDamageCollider.EnableDamageCollider();
+            if(playerManager.isUsingRightHand)
+            {
+                rightHandDamageCollider.EnableDamageCollider();
+            }
+            else if(playerManager.isUsingLeftHand)
+            {
+                leftHandDamageCollider.EnableDamageCollider();
+            }
         }
 
-        public void CloseRightDamageCollider()
+        public void CloseDamageCollider()
         {
             rightHandDamageCollider.DisableDamageCollider();
-        }
-
-        public void OpenLeftDamageCollider()
-        {
-            leftHandDamageCollider.EnableDamageCollider();
-        }
-
-        public void CloseLeftDamageCollider()
-        {
             leftHandDamageCollider.DisableDamageCollider();
         }
         #endregion

@@ -39,9 +39,6 @@ namespace KA
         [SerializeField]
         float fallingSpeed = 45;
 
-        public CapsuleCollider characterCollider;
-        public CapsuleCollider characterCollisionBlockerCollider;
-
         private void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
@@ -58,9 +55,7 @@ namespace KA
             animatorHandler.Initialize();
 
             playerManager.isGrounded = true;
-            ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
-            Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
-
+            ignoreForGroundCheck = ~(1 << 7 | 1 << 11);
         }
 
         #region Movement

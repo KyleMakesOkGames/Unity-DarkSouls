@@ -39,6 +39,9 @@ namespace KA
 
         public void TakeDamage(int damage)
         {
+            if (isDead)
+                return;
+
             currentHealth = currentHealth - damage;
 
             healthBar.SetCurrentHealth(currentHealth);
@@ -49,6 +52,7 @@ namespace KA
             {
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Dead", true);
+                isDead = true;
             }
         }
 

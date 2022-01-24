@@ -40,6 +40,7 @@ namespace KA
         CameraHandler cameraHandler;
         UIManager uiManager;
         WeaponSlotManager weaponSlotManager;
+        AnimatorHandler animatorHandler;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -52,6 +53,7 @@ namespace KA
             playerManager = GetComponent<PlayerManager>();
             uiManager = FindObjectOfType<UIManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
         public void OnEnable()
@@ -141,6 +143,7 @@ namespace KA
                     if (playerManager.canDoCombo)
                         return;
 
+                    animatorHandler.anim.SetBool("isUsingRightHand", true);
                     playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 }
             }
