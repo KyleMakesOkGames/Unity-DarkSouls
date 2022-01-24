@@ -25,7 +25,10 @@ namespace KA
 
         public void DisableDamageCollider()
         {
-            damageCollider.enabled = false;
+            if(damageCollider != null)
+            {
+                damageCollider.enabled = false;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -42,6 +45,7 @@ namespace KA
 
             if(other.tag == "Enemy")
             {
+                Debug.Log("Hit");
                 EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
                 if(enemyStats != null)

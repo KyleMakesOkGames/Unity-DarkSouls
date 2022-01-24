@@ -10,6 +10,10 @@ namespace KA
         public int maxHealth;
         public int currentHealth;
 
+        public int staminaLevel;
+        public int maxStamina;
+        public float currentStamina;
+
         public bool isDead;
     }
 }

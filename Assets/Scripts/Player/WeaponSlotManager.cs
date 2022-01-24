@@ -129,7 +129,6 @@ namespace KA
         public void CloseDamageCollider()
         {
             rightHandDamageCollider.DisableDamageCollider();
-            leftHandDamageCollider.DisableDamageCollider();
         }
         #endregion
 

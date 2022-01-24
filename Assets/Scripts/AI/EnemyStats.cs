@@ -31,6 +31,8 @@ namespace KA
 
             currentHealth = currentHealth - damage;
 
+            enemyAnimatorHandler.PlayTargetAnimation("Damage", true);
+
             if (currentHealth <= 0)
             {
                 currentHealth = 0;

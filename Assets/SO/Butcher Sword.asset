@@ -29,6 +29,6 @@ MonoBehaviour:
   TH_Light_Attack_3: TH_Sword_Attack3
   TH_Heavy_Attack_1: TH_Sword_HeavyAttack1
   TH_Heavy_Attack_2: TH_Sword_HeavyAttack2
-  baseStamina: 0
-  lightAttackMultiplier: 0
-  heavyAttackMultiplier: 0
+  baseStamina: 20
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2

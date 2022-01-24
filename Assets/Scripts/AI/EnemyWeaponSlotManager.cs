@@ -78,7 +78,7 @@ namespace KA
 
         public void OpenDamageCollider()
         {
-            rightHandDamageCollider.EnableDamageCollider(); 
+            rightHandDamageCollider.EnableDamageCollider();
         }
 
         public void CloseDamageCollider()

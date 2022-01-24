@@ -6,23 +6,35 @@ namespace KA
 {
     public class PlayerStats : CharacterStats
     {
-        public int staminaLevel;
-        public int maxStamina;
-        public int currentStamina;
+        PlayerManager playerManager;
 
-        public HealthBar healthBar;
-
+        HealthBar healthBar;
+        StaminaBar staminaBar;
         AnimatorHandler animatorHandler;
 
-        private void Start()
+        public float staminaRegenerationAmount = 1;
+        [HideInInspector] public float staminaRegenTimer = 0;
+
+        private void Awake()
+        {
+            playerManager = GetComponent<PlayerManager>();
+
+            healthBar = FindObjectOfType<HealthBar>();
+            staminaBar = FindObjectOfType<StaminaBar>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        }
+
+        void Start()
         {
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            healthBar.SetCurrentHealth(currentHealth);
 
             maxStamina = SetMaxStaminaFromStaminaLevel();
             currentStamina = maxStamina;
+            staminaBar.SetMaxStamina(maxStamina);
+            staminaBar.SetCurrentStamina(currentStamina);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -39,26 +51,48 @@ namespace KA
 
         public void TakeDamage(int damage)
         {
+            if (playerManager.isInvulnerable)
+                return;
+
             if (isDead)
                 return;
 
             currentHealth = currentHealth - damage;
-
             healthBar.SetCurrentHealth(currentHealth);
 
-            animatorHandler.PlayTargetAnimation("Damage", true);
+            animatorHandler.PlayTargetAnimation("Damage_01", true);
 
-            if(currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                animatorHandler.PlayTargetAnimation("Dead", true);
+                animatorHandler.PlayTargetAnimation("Dead_01", true);
                 isDead = true;
+                //HANDLE PLAYER DEATH
             }
         }
 
         public void TakeStaminaDamage(int damage)
         {
             currentStamina = currentStamina - damage;
+            staminaBar.SetCurrentStamina(currentStamina);
+        }
+
+        public void RegenerateStamina()
+        {
+            if (playerManager.isInteracting)
+            {
+                staminaRegenTimer = 0;
+            }
+            else
+            {
+                staminaRegenTimer += Time.deltaTime;
+
+                if (currentStamina < maxStamina && staminaRegenTimer > 1f)
+                {
+                    currentStamina += staminaRegenerationAmount * Time.deltaTime;
+                    staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
+                }
+            }
         }
     }
 }

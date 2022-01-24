@@ -98,6 +98,16 @@ namespace KA
             anim.SetBool("canDoCombo", false);
         }
 
+        public void EnableIsInvulnerable()
+        {
+            anim.SetBool("isInvulnerable", true);
+        }
+
+        public void DisableIsInvulnerable()
+        {
+            anim.SetBool("isInvulnerable", false);
+        }
+
         private void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false) return;

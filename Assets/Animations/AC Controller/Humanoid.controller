@@ -111,6 +111,7 @@ AnimatorState:
   - {fileID: 2395672999857366205}
   - {fileID: 3823150527072225586}
   - {fileID: 2652472166013347074}
+  - {fileID: 7095038450265650316}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -772,6 +773,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: isInvulnerable
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1220,7 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetBool: isUsingRightHand
-  status: 0
+  status: 1
 --- !u!1102 &4108105051164350443
 AnimatorState:
   serializedVersion: 6
@@ -1470,6 +1477,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetBool: 
+  status: 0
+--- !u!114 &7095038450265650316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47910acdb1fbb8643a12bf24a4be8001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetBool: isInvulnerable
   status: 0
 --- !u!1101 &7320773981699947744
 AnimatorStateTransition:
