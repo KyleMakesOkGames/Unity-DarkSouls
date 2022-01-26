@@ -33,5 +33,10 @@ namespace KA
         public float lightAttackMultiplier;
         public float heavyAttackMultiplier;
 
+        [Header("Weapon Type")]
+        public bool isSpellCaster;
+        public bool isPyroCaster;
+        public bool isFaithCaster;
+        public bool isMeleeWeapon;
     }
 }

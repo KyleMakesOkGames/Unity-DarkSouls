@@ -3,6 +3,7 @@ namespace KA
 {
     public class InputHandler : MonoBehaviour
     {
+        #region Input Variables
         public float horizontal;
         public float vertical;
         public float moveAmount;
@@ -44,10 +45,11 @@ namespace KA
 
         Vector2 movementInput;
         Vector2 cameraInput;
+        #endregion 
 
         private void Awake()
         {
-            playerAttacker = GetComponent<PlayerAttacker>();
+            playerAttacker = GetComponentInChildren<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             playerManager = GetComponent<PlayerManager>();
@@ -129,23 +131,7 @@ namespace KA
         {
             if (rb_Input)
             {
-                if (playerManager.canDoCombo)
-                {
-                    comboFlag = true;
-                    playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
-                    comboFlag = false;
-                }
-                else
-                {
-                    if (playerManager.isInteracting)
-                        return;
-
-                    if (playerManager.canDoCombo)
-                        return;
-
-                    animatorHandler.anim.SetBool("isUsingRightHand", true);
-                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-                }
+                playerAttacker.HandleRBAction();
             }
 
             if(rt_Input)

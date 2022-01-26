@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1017,17 +1017,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &369048736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3246315419645249410, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
-  m_PrefabInstance: {fileID: 3246315419986508578}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399f1422393cea84e8047a052cd1926a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &383827364
 Mesh:
   m_ObjectHideFlags: 0
@@ -1192,11 +1181,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &507776999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6738675309838549383, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
-  m_PrefabInstance: {fileID: 3246315419986508578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &630056604
 Mesh:
   m_ObjectHideFlags: 0
@@ -1361,11 +1345,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &691585992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3246315419297118442, guid: 1047ec69c8681af418490b6f169dbfb3, type: 3}
-  m_PrefabInstance: {fileID: 3246315419986508578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697332568
 GameObject:
   m_ObjectHideFlags: 0
@@ -9835,6 +9814,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8647044370670332294, guid: 01cfb0ef84cebea4f8b8354eab5d7b0b, type: 3}
+      propertyPath: lookSpeed
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647044370670332294, guid: 01cfb0ef84cebea4f8b8354eab5d7b0b, type: 3}
+      propertyPath: pivotSpeed
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647044370670332294, guid: 01cfb0ef84cebea4f8b8354eab5d7b0b, type: 3}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 904297054}
@@ -9851,26 +9838,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6210010102106405742, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: isUsingRightHand
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6210010102106405742, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: interactableUIGameObject
-      value: 
-      objectReference: {fileID: 691585992}
-    - target: {fileID: 6210010102106405742, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: itemInteractableGameObject
-      value: 
-      objectReference: {fileID: 507776999}
-    - target: {fileID: 6808860019063928319, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 369048736}
-    - target: {fileID: 6808860019063928319, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: staminaRegenerationAmount
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8918176394304981048, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9914,10 +9881,6 @@ PrefabInstance:
     - target: {fileID: 8918176394304981048, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918176394304981049, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
-      propertyPath: m_Height
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8918176394304981050, guid: 6eebd2dd628a9ef45ae2b37240324a14, type: 3}
       propertyPath: m_Name
