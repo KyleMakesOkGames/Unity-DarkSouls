@@ -60,12 +60,12 @@ namespace KA
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);
 
-            animatorHandler.PlayTargetAnimation("Damage_01", true);
+            animatorHandler.PlayTargetAnimation("Damage", true);
 
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                animatorHandler.PlayTargetAnimation("Dead_01", true);
+                animatorHandler.PlayTargetAnimation("Dead", true);
                 isDead = true;
                 //HANDLE PLAYER DEATH
             }
@@ -93,6 +93,18 @@ namespace KA
                     staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
                 }
             }
+        }
+
+        public void HealPlayer(int healAmount)
+        {
+            currentHealth = currentHealth + healAmount;
+
+            if(currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+            healthBar.SetCurrentHealth(currentHealth);
         }
     }
 }

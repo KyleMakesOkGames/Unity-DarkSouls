@@ -11,15 +11,13 @@ namespace KA
 
         public override void AttemptToCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
-            GameObject instantiatedWarmUpSpellFX = Instantiate(spellWarmUpFX, animatorHandler.transform);
             animatorHandler.PlayTargetAnimation(spellAnimation, true);
             Debug.Log("Attempting To Cast Spell...");
         }
 
         public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
-            GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorHandler.transform);
-            playerStats.currentHealth = playerStats.currentHealth + healAmount;
+            playerStats.HealPlayer(healAmount);
             Debug.Log("Spell Cast Successful!");
         }
     }

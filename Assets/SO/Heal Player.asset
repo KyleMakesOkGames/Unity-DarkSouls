@@ -16,9 +16,9 @@ MonoBehaviour:
   itemName: Heal Player
   spellWarmUpFX: {fileID: 0}
   spellCastFX: {fileID: 0}
-  spellAnimation: 
+  spellAnimation: HealPlayer
   isFaithSpell: 1
   isMagicSpell: 0
   isPyroSpell: 0
   spellDescription: 
-  healAmount: 0
+  healAmount: 50
