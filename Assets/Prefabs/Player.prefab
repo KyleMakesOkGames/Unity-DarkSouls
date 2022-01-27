@@ -49,6 +49,37 @@ MonoBehaviour:
   isRightHandSlot: 0
   isBackSlot: 1
   currentWeaponModel: {fileID: 0}
+--- !u!1 &1089095805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089095806}
+  m_Layer: 12
+  m_Name: RayCast Start Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089095806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089095805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1859313481}
+  m_Father: {fileID: 8918176394304981048}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484830488
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +109,97 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8918176394304981048}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1762530042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762530043}
+  m_Layer: 12
+  m_Name: Combat Transforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762530043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762530042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1816065476}
+  m_Father: {fileID: 8918176394304981048}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1816065475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816065476}
+  m_Layer: 12
+  m_Name: BackStab Stand Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816065476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816065475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1762530043}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1859313480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859313481}
+  m_Layer: 12
+  m_Name: Critical Attack RayCast Start Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859313481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859313480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1089095806}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942632927386021668
 GameObject:
@@ -279,6 +401,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastAttack: 
+  backStabLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8918176394304981050
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +441,8 @@ Transform:
   - {fileID: 7535708095004621329}
   - {fileID: 1484830489}
   - {fileID: 8898265902862428592}
+  - {fileID: 1089095806}
+  - {fileID: 1762530043}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,6 +493,7 @@ MonoBehaviour:
   y_Input: 0
   x_Input: 0
   rb_Input: 0
+  critical_Attack_Input: 0
   rt_Input: 0
   jump_Input: 0
   inventory_Input: 0
@@ -383,6 +511,7 @@ MonoBehaviour:
   lockOnFlag: 0
   inventoryFlag: 0
   rollInputTimer: 0
+  criticalAttackRayCastStartPoint: {fileID: 1859313481}
 --- !u!114 &8195003761832990611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,11 +525,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpell: {fileID: 11400000, guid: 9eedd7ae57d29d34e96e2ac47ec6b00d, type: 2}
-  rightWeapon: {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
+  rightWeapon: {fileID: 11400000, guid: be6cbd099b734e94b9ae1203b0d95de4, type: 2}
   leftWeapon: {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
   unarmedWeapon: {fileID: 11400000, guid: 628519d461bbab646be6d08e565baa4a, type: 2}
   weaponsInRightHandSlots:
-  - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
+  - {fileID: 11400000, guid: be6cbd099b734e94b9ae1203b0d95de4, type: 2}
   - {fileID: 11400000, guid: d7276fba30da54d47bdfd5215ba79eb1, type: 2}
   weaponsInLeftHandSlots:
   - {fileID: 11400000, guid: 628519d461bbab646be6d08e565baa4a, type: 2}
@@ -421,6 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1484830489}
+  backStabBoxCollider: {fileID: 0}
+  backStabCollider: {fileID: 0}
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
   isInteracting: 0
@@ -449,6 +580,9 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  focusLevel: 10
+  maxFocusPoints: 0
+  currentFocusPoints: 0
   isDead: 0
   staminaRegenerationAmount: 30
   staminaRegenTimer: 0
@@ -5448,9 +5582,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9015663576429038072, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
   m_PrefabInstance: {fileID: 1558235432076264237}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7533136325702470079 stripped
+--- !u!4 &7532859834083638617 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 9013080877164595858, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9013372759732502132, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
   m_PrefabInstance: {fileID: 1558235432076264237}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7530088168082971841 stripped
@@ -5473,8 +5607,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9015661232911723366, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
   m_PrefabInstance: {fileID: 1558235432076264237}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7532859834083638617 stripped
+--- !u!4 &7533136325702470079 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 9013372759732502132, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9013080877164595858, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
   m_PrefabInstance: {fileID: 1558235432076264237}
   m_PrefabAsset: {fileID: 0}

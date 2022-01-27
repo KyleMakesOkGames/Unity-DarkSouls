@@ -14,6 +14,8 @@ namespace KA
         WeaponSlotManager weaponSlotManager;
         public string lastAttack;
 
+        public LayerMask backStabLayer;
+
         private void Awake()
         {
             animatorHandler = GetComponent<AnimatorHandler>();
@@ -117,11 +119,20 @@ namespace KA
 
         private void PerformRBMagicAction(WeaponItem weapon)
         {
+            if (playerManager.isInteracting)
+                return;
             if(weapon.isFaithCaster)
             {
                 if (playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
                 {
-                    playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                    if(playerStats.currentFocusPoints >= playerInventory.currentSpell.focusPointCost)
+                    {
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation("Cant Spell", true);
+                    }
                 }
             }
         }
@@ -129,6 +140,32 @@ namespace KA
         private void SuccessfullyCastSpell()
         {
             playerInventory.currentSpell.SuccessfullyCastSpell(animatorHandler, playerStats);
+        }
+
+        public void AttemptBackStabOrReposte()
+        {
+            RaycastHit hit;
+
+            if(Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position, transform.TransformDirection(Vector3.forward), out hit, 0.5f, backStabLayer))
+            {
+                CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+
+                if(enemyCharacterManager != null)
+                {
+                    playerManager.transform.position = enemyCharacterManager.backStabCollider.backStabStandPoint.position;
+
+                    Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                    rotationDirection = hit.transform.position - playerManager.transform.position;
+                    rotationDirection.y = 0;
+                    rotationDirection.Normalize();
+                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                    playerManager.transform.rotation = targetRotation;
+
+                    animatorHandler.PlayTargetAnimation("Backstab", true);
+                    enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Backstabbed", true);
+                }
+            }
         }
     }
 }

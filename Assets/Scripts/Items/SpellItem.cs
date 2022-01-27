@@ -9,6 +9,7 @@ namespace KA
         public GameObject spellWarmUpFX;
         public GameObject spellCastFX;
         public string spellAnimation;
+        public int focusPointCost;
 
         [Header("Spell Type")]
         public bool isFaithSpell;
@@ -26,7 +27,7 @@ namespace KA
 
         public virtual void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
-            Debug.Log("You Casted A Spell Successfully");
+            playerStats.DeductFocusPoints(focusPointCost);
         }
     }
 }

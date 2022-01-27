@@ -14,6 +14,10 @@ namespace KA
         public int maxStamina;
         public float currentStamina;
 
+        public int focusLevel;
+        public float maxFocusPoints;
+        public float currentFocusPoints;
+
         public bool isDead;
     }
 }

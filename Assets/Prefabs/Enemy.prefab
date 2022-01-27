@@ -1,5 +1,124 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &363082952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363082953}
+  m_Layer: 12
+  m_Name: Combat Transforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &363082953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363082952}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.22}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 722335777}
+  m_Father: {fileID: 8240806565352093284}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &722335776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722335777}
+  m_Layer: 12
+  m_Name: BackStab Stand Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722335777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722335776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 363082953}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1604748469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1604748470}
+  - component: {fileID: 1604748472}
+  - component: {fileID: 1604748471}
+  m_Layer: 13
+  m_Name: BackStab Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1604748470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604748469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.25, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7718145251104064090}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1604748472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604748469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.65199655, y: 0.7955649, z: 0.041023254}
+  m_Center: {x: -0.01708284, y: -0.102217555, z: 0.1258223}
+--- !u!114 &1604748471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604748469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5843a92afb5748aca803059dd4b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backStabStandPoint: {fileID: 722335777}
 --- !u!1 &2524608948338019420
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,6 +147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 547777274115335676}
+  - {fileID: 1604748470}
   m_Father: {fileID: 8240806565352093284}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -533,6 +653,7 @@ Transform:
   - {fileID: 3584505832153878367}
   - {fileID: 7718145251104064090}
   - {fileID: 6815409200859972905}
+  - {fileID: 363082953}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -594,6 +715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 8240806565979721801}
+  backStabBoxCollider: {fileID: 0}
+  backStabCollider: {fileID: 0}
   currentState: {fileID: 6624920980001010084}
   currentTarget: {fileID: 0}
   navmeshAgent: {fileID: 0}
@@ -618,9 +741,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3580593b89b43f4c8ccc48d27391bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthLevel: 0
+  healthLevel: 10
   maxHealth: 0
   currentHealth: 0
+  staminaLevel: 0
+  maxStamina: 0
+  currentStamina: 0
+  focusLevel: 0
+  maxFocusPoints: 0
+  currentFocusPoints: 0
   isDead: 0
 --- !u!1 &8240806565979721802
 GameObject:
@@ -981,6 +1110,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 860184cd1c0625444aca658e25a50485, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
+--- !u!1 &6810225141324381937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1772587093756804, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
+  m_PrefabInstance: {fileID: 6810721950795330933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6815409200859972905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4988520983457884, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
@@ -991,9 +1125,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1609706984018536, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
   m_PrefabInstance: {fileID: 6810721950795330933}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6810225141324381937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1772587093756804, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
+--- !u!4 &6815149586854355903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4730062155208394, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
   m_PrefabInstance: {fileID: 6810721950795330933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6809508864570289281 stripped
@@ -1004,10 +1138,5 @@ GameObject:
 --- !u!4 &6815076181879538143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4653315597776042, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
-  m_PrefabInstance: {fileID: 6810721950795330933}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6815149586854355903 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4730062155208394, guid: f96fa216d8859434fb29ff7cc4930724, type: 3}
   m_PrefabInstance: {fileID: 6810721950795330933}
   m_PrefabAsset: {fileID: 0}

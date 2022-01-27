@@ -10,6 +10,7 @@ namespace KA
 
         HealthBar healthBar;
         StaminaBar staminaBar;
+        FocusPointBar focusPointBar;
         AnimatorHandler animatorHandler;
 
         public float staminaRegenerationAmount = 1;
@@ -21,10 +22,11 @@ namespace KA
 
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
+            focusPointBar = FindObjectOfType<FocusPointBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        void Start()
+        private void Start()
         {
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
@@ -35,6 +37,11 @@ namespace KA
             currentStamina = maxStamina;
             staminaBar.SetMaxStamina(maxStamina);
             staminaBar.SetCurrentStamina(currentStamina);
+
+            maxFocusPoints = SetMaxFocusPointsFromFocusLevel();
+            currentFocusPoints = maxFocusPoints;
+            focusPointBar.SetMaxFocusPoints(maxFocusPoints);
+            focusPointBar.SetCurrentFocusPoints(currentFocusPoints);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -47,6 +54,12 @@ namespace KA
         {
             maxStamina = staminaLevel * 10;
             return maxStamina;
+        }
+
+        private float SetMaxFocusPointsFromFocusLevel()
+        {
+            maxFocusPoints = focusLevel * 10;
+            return maxFocusPoints;
         }
 
         public void TakeDamage(int damage)
@@ -105,6 +118,18 @@ namespace KA
             }
 
             healthBar.SetCurrentHealth(currentHealth);
+        }
+
+        public void DeductFocusPoints(int focusPoints)
+        {
+            currentFocusPoints = currentFocusPoints - focusPoints;
+
+            if(currentFocusPoints < 0)
+            {
+                currentFocusPoints = 0;
+            }
+
+            focusPointBar.SetCurrentFocusPoints(currentFocusPoints);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace KA
         public bool y_Input;
         public bool x_Input;
         public bool rb_Input;
+        public bool critical_Attack_Input;
         public bool rt_Input;
         public bool jump_Input;
         public bool inventory_Input;
@@ -42,6 +43,8 @@ namespace KA
         UIManager uiManager;
         WeaponSlotManager weaponSlotManager;
         AnimatorHandler animatorHandler;
+
+        public Transform criticalAttackRayCastStartPoint;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -76,6 +79,7 @@ namespace KA
                 inputActions.PlayerMovement.LockOnTargetRight.performed += inputActions => right_Stick_Right_Input = true;
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += inputActions => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.X.performed += i => x_Input = true;
+                inputActions.PlayerActions.CriticalAttack.performed += i => critical_Attack_Input = true;
             }
 
             inputActions.Enable();
@@ -95,6 +99,7 @@ namespace KA
             HandleInventoryInput();
             HandleLockOnInput();
             HandleTwoHandInput();
+            HandleCriticalAttackInput();
         }
 
         private void HandleMoveInput(float delta)
@@ -246,6 +251,15 @@ namespace KA
                     weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
                     weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
                 }
+            }
+        }
+
+        private void HandleCriticalAttackInput()
+        {
+            if(critical_Attack_Input)
+            {
+                critical_Attack_Input = false;
+                playerAttacker.AttemptBackStabOrReposte();
             }
         }
     }

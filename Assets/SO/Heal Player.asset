@@ -17,6 +17,7 @@ MonoBehaviour:
   spellWarmUpFX: {fileID: 0}
   spellCastFX: {fileID: 0}
   spellAnimation: HealPlayer
+  focusPointCost: 35
   isFaithSpell: 1
   isMagicSpell: 0
   isPyroSpell: 0
