@@ -10,6 +10,7 @@ namespace KA
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
         PlayerStats playerStats;
+        AnimatorHandler animatorHandler;
 
         InteractableUI interactableUI;
         public GameObject interactableUIGameObject;
@@ -29,29 +30,28 @@ namespace KA
         private void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
-        }
-
-        void Start()
-        {
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
             interactableUI = FindObjectOfType<InteractableUI>();
             playerStats = GetComponent<PlayerStats>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-
-        void Update()
+        private void Update()
         {
             float delta = Time.deltaTime;
 
             isInteracting = anim.GetBool("isInteracting");
             canDoCombo = anim.GetBool("canDoCombo");
-            anim.SetBool("isInAir", isInAir);
             isUsingRightHand = anim.GetBool("isUsingRightHand");
             isUsingLeftHand = anim.GetBool("isUsingLeftHand");
             isInvulnerable = anim.GetBool("isInvulnerable");
+            anim.SetBool("isInAir", isInAir);
+            anim.SetBool("isDead", playerStats.isDead);
+
             inputHandler.TickInput(delta);
+            animatorHandler.canRotate = anim.GetBool("canRotate");
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleJumping();
             playerStats.RegenerateStamina();
@@ -65,6 +65,7 @@ namespace KA
 
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleRotation(delta);
         }
 
         private void LateUpdate()

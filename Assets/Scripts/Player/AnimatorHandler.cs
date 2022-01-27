@@ -6,15 +6,16 @@ namespace KA
     public class AnimatorHandler : AnimatorManager
     {
         PlayerManager playerManager;
+        PlayerStats playerStats;
         InputHandler inputHandler;
         PlayerLocomotion playerLocomotion;
         private int vertical;
         private int horizontal;
-        public bool canRotate;
 
         public void Initialize()
         {
             playerManager = GetComponentInParent<PlayerManager>();
+            playerStats = GetComponentInParent<PlayerStats>();
             anim = GetComponent<Animator>();
             inputHandler = GetComponentInParent<InputHandler>();
             playerLocomotion = GetComponentInParent<PlayerLocomotion>();
@@ -80,12 +81,12 @@ namespace KA
 
         public void CanRotate()
         {
-            canRotate = true;
+            anim.SetBool("canRotate", true);
         }
 
         public void StopRotation()
         {
-            canRotate = false;
+            anim.SetBool("canRotate", false);
         }
 
         public void EnableCombo()
@@ -106,6 +107,11 @@ namespace KA
         public void DisableIsInvulnerable()
         {
             anim.SetBool("isInvulnerable", false);
+        }
+
+        public override void TakeCriticalDamageAnimationEvent()
+        {
+
         }
 
         private void OnAnimatorMove()

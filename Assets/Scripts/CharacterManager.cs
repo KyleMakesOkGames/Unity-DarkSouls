@@ -9,5 +9,8 @@ namespace KA
         public Transform lockOnTransform;
         public BoxCollider backStabBoxCollider;
         public BackStabCollider backStabCollider;
+
+        public int pendingCriticalDamage;
+
     }
 }

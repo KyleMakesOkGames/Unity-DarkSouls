@@ -6,12 +6,20 @@ namespace KA
     public class EnemyAnimatorHandler : AnimatorManager
     {
         public EnemyLocomotion enemyLocomotion;
+        EnemyStats enemyStats;
         public EnemyManager enemyManager;
 
         private void Awake()
         {
             anim = GetComponent<Animator>();
             enemyLocomotion = GetComponentInParent<EnemyLocomotion>();
+            enemyStats = GetComponentInParent<EnemyStats>();
+        }
+
+        public override void TakeCriticalDamageAnimationEvent()
+        {
+            enemyStats.TakeDamageNoAnimation(enemyManager.pendingCriticalDamage);
+            enemyManager.pendingCriticalDamage = 0;
         }
 
         private void OnAnimatorMove()

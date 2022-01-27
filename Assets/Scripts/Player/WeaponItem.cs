@@ -9,6 +9,10 @@ namespace KA
         public GameObject modelPrefab;
         public bool isUnarmed;
 
+        [Header("Damage")]
+        public int baseDamage = 30;
+        public int criticalDamageMultiplier = 4;
+
         [Header("Idle Animations")]
         public string right_Hand_Idle;
         public string left_Hand_Idle;

@@ -149,6 +149,7 @@ namespace KA
             if(Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position, transform.TransformDirection(Vector3.forward), out hit, 0.5f, backStabLayer))
             {
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+                DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
 
                 if(enemyCharacterManager != null)
                 {
@@ -161,6 +162,9 @@ namespace KA
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);
                     Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
                     playerManager.transform.rotation = targetRotation;
+
+                    int criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeapon.currentWeaponDamage;
+                    enemyCharacterManager.pendingCriticalDamage = criticalDamage;
 
                     animatorHandler.PlayTargetAnimation("Backstab", true);
                     enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Backstabbed", true);

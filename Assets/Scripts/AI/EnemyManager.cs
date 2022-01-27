@@ -49,6 +49,7 @@ namespace KA
             HandleRecoveryTimer();
 
             isInteracting = enemyAnimatorHandler.anim.GetBool("isInteracting");
+            enemyAnimatorHandler.anim.SetBool("isDead", enemyStats.isDead);
         }
 
         private void FixedUpdate()
