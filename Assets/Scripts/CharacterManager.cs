@@ -7,10 +7,12 @@ namespace KA
     public class CharacterManager : MonoBehaviour
     {
         public Transform lockOnTransform;
-        public BoxCollider backStabBoxCollider;
-        public BackStabCollider backStabCollider;
+        public CriticalDamageCollider backStabCollider;
+        public CriticalDamageCollider riposteCollider;
 
         public int pendingCriticalDamage;
 
+        [Header("Combat Flags")]
+        public bool canBeRiposted;
     }
 }

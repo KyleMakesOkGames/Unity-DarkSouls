@@ -26,7 +26,8 @@ namespace KA
 
                     if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
                     {
-                        enemyManager.currentTarget = characterStats;
+                        if(!enemyStats.isDead)
+                          enemyManager.currentTarget = characterStats;
                     }
                 }
             }

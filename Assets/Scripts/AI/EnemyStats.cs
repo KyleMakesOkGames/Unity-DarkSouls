@@ -7,6 +7,8 @@ namespace KA
     {
         EnemyAnimatorHandler enemyAnimatorHandler;
 
+        public int soulsAwardedOnDeath = 50;
+
         private void Awake()
         {
             enemyAnimatorHandler = GetComponentInChildren<EnemyAnimatorHandler>();
@@ -46,10 +48,15 @@ namespace KA
 
             if (currentHealth <= 0)
             {
-                currentHealth = 0;
-                enemyAnimatorHandler.PlayTargetAnimation("Dead", true);
-                isDead = true;
+                HandleDeath();
             }
+        }
+
+        private void HandleDeath()
+        {
+            currentHealth = 0;
+            enemyAnimatorHandler.PlayTargetAnimation("Dead", true);
+            isDead = true;
         }
     }
 }

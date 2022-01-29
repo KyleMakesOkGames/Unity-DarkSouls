@@ -34,7 +34,6 @@ namespace KA
             enemyAnimatorHandler = GetComponentInChildren<EnemyAnimatorHandler>();
             enemyStats = GetComponent<EnemyStats>();
             enemyRigidBody = GetComponent<Rigidbody>();
-            backStabCollider = GetComponentInChildren<BackStabCollider>();
             navmeshAgent = GetComponentInChildren<NavMeshAgent>();
             navmeshAgent.enabled = false;
         }
@@ -59,6 +58,12 @@ namespace KA
 
         private void HandleStateMachine()
         {
+            if(enemyStats.isDead)
+            {
+                SwitchToNextState(null);
+                currentTarget = null;
+            }
+
             if (currentState != null)
             {
                 State nextState = currentState.Tick(this, enemyStats, enemyAnimatorHandler);

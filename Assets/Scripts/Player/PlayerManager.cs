@@ -99,7 +99,7 @@ namespace KA
         {
             RaycastHit hit;
 
-            if (Physics.SphereCast(transform.position, 0.6f, transform.forward, out hit, 1f))
+            if (Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f))
             {
                 if (hit.collider.tag == "Interactable")
                 {
@@ -130,6 +130,13 @@ namespace KA
                     itemInteractableGameObject.SetActive(false);
                 }
             }
+        }
+
+        public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
+        {
+            playerLocomotion.rigidbody.velocity = Vector3.zero;
+            transform.position = playerStandsHereWhenOpeningChest.transform.position;
+            animatorHandler.PlayTargetAnimation("Open Chest", true);
         }
     }
 }

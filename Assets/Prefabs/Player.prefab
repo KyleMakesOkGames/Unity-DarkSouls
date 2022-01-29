@@ -406,9 +406,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1484830489}
-  backStabBoxCollider: {fileID: 0}
   backStabCollider: {fileID: 0}
+  riposteCollider: {fileID: 0}
   pendingCriticalDamage: 0
+  canBeRiposted: 0
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
   isInteracting: 0
@@ -440,6 +441,7 @@ MonoBehaviour:
   focusLevel: 10
   maxFocusPoints: 0
   currentFocusPoints: 0
+  soulCount: 0
   isDead: 0
   staminaRegenerationAmount: 30
   staminaRegenTimer: 0
@@ -480,6 +482,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8918176394304981048}
     m_Modifications:
+    - target: {fileID: 364972292803338454, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: riposteLayer.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
     - target: {fileID: 9010506898052249916, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
       propertyPath: m_RootOrder
       value: 0
