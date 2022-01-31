@@ -3,8 +3,9 @@ namespace KA
 {
     public class PlayerLocomotion : MonoBehaviour
     {
-        CameraHandler cameraHandler;
         PlayerManager playerManager;
+        PlayerStats playerStats;
+        CameraHandler cameraHandler;
         Transform cameraObject;
         InputHandler inputHandler;
         public Vector3 moveDirection;
@@ -39,6 +40,14 @@ namespace KA
         [SerializeField]
         float fallingSpeed = 45;
 
+        [Header("Stamina Costs")]
+        [SerializeField]
+        int rollStaminaCost = 15;
+        [SerializeField]
+        int backstepStaminaCost = 12;
+        [SerializeField]
+        int sprintStaminaCost = 1;
+
         private void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
@@ -49,6 +58,7 @@ namespace KA
             playerManager = GetComponent<PlayerManager>();
             rigidbody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<InputHandler>();
+            playerStats = GetComponent<PlayerStats>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             cameraObject = Camera.main.transform;
             myTransform = transform;
@@ -141,6 +151,7 @@ namespace KA
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
                 moveDirection *= speed;
+                playerStats.TakeStaminaDamage(sprintStaminaCost);
             }
             else
             {
@@ -174,6 +185,9 @@ namespace KA
             if (animatorHandler.anim.GetBool("isInteracting"))
                 return;
 
+            if (playerStats.currentStamina <= 0)
+                return;
+
             if (inputHandler.rollFlag)
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
@@ -185,10 +199,12 @@ namespace KA
                     moveDirection.y = 0;
                     Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = rollRotation;
+                    playerStats.TakeStaminaDamage(rollStaminaCost);
                 }
                 else
                 {
                     animatorHandler.PlayTargetAnimation("Backstep", true);
+                    playerStats.TakeStaminaDamage(backstepStaminaCost);
                 }
             }
         }

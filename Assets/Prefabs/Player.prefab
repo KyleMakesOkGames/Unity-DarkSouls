@@ -328,6 +328,9 @@ MonoBehaviour:
   sprintSpeed: 6
   rotationSpeed: 13
   fallingSpeed: 600
+  rollStaminaCost: 30
+  backstepStaminaCost: 15
+  sprintStaminaCost: 1
 --- !u!114 &8918176394304980998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +624,46 @@ PrefabInstance:
     - target: {fileID: 9016155482763569912, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.07106632
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.20275341
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9749296
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.057904575
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 4.824
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -189.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -23.891
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}

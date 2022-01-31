@@ -55,6 +55,9 @@ namespace KA
 
         public void HandleLightAttack(WeaponItem weapon)
         {
+            if (playerStats.currentStamina <= 0)
+                return;
+
             weaponSlotManager.attackingWeapon = weapon;
 
             if (inputHandler.twoHandFlag)
@@ -71,6 +74,9 @@ namespace KA
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
+            if (playerStats.currentStamina <= 0)
+                return;
+
             weaponSlotManager.attackingWeapon = weapon;
 
             if (inputHandler.twoHandFlag)
@@ -94,6 +100,18 @@ namespace KA
             else if(playerInventory.rightWeapon.isSpellCaster || playerInventory.rightWeapon.isFaithCaster || playerInventory.rightWeapon.isPyroCaster)
             {
                 PerformRBMagicAction(playerInventory.rightWeapon);
+            }
+        }
+
+        public void HandleLTAction()
+        {
+            if(playerInventory.leftWeapon.isShieldWeapon)
+            {
+                PerformLTWeaponArt(inputHandler.twoHandFlag);
+            }
+            else if(playerInventory.leftWeapon.isMeleeWeapon)
+            {
+                //Light Attack
             }
         }
 
@@ -135,6 +153,21 @@ namespace KA
                         animatorHandler.PlayTargetAnimation("Cant Spell", true);
                     }
                 }
+            }
+        }
+
+        private void PerformLTWeaponArt(bool isTwoHanding)
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if(isTwoHanding)
+            {
+               
+            }
+            else
+            {
+               animatorHandler.PlayTargetAnimation(playerInventory.leftWeapon.weapon_Art, true);
             }
         }
 

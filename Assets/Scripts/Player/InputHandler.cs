@@ -16,6 +16,7 @@ namespace KA
         public bool rb_Input;
         public bool critical_Attack_Input;
         public bool rt_Input;
+        public bool lt_Input;
         public bool jump_Input;
         public bool inventory_Input;
         public bool lockOnInput;
@@ -40,6 +41,7 @@ namespace KA
         PlayerInventory playerInventory;
         PlayerManager playerManager;
         CameraHandler cameraHandler;
+        PlayerStats playerStats;
         UIManager uiManager;
         WeaponSlotManager weaponSlotManager;
         AnimatorHandler animatorHandler;
@@ -54,6 +56,7 @@ namespace KA
         {
             playerAttacker = GetComponentInChildren<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            playerStats = GetComponent<PlayerStats>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             playerManager = GetComponent<PlayerManager>();
             uiManager = FindObjectOfType<UIManager>();
@@ -69,7 +72,10 @@ namespace KA
                 inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
                 inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
                 inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+                inputActions.PlayerActions.Roll.performed += i => b_Input = true;
+                inputActions.PlayerActions.Roll.canceled += i => b_Input = false;
                 inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+                inputActions.PlayerActions.LT.performed += i => lt_Input = true;
                 inputActions.PlayerQuickslots.DPadRight.performed += i => d_Pad_Right = true;
                 inputActions.PlayerQuickslots.DPadLeft.performed += i => d_Pad_Left = true;
                 inputActions.PlayerActions.Y.performed += i => y_Input = true;
@@ -113,18 +119,27 @@ namespace KA
 
         private void HandleRollInput(float delta)
         {
-            b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
-            sprintFlag = b_Input;
-
             if (b_Input)
             {
                 rollInputTimer += delta;
+
+                if (playerStats.currentStamina <= 0)
+                {
+                    b_Input = false;
+                    sprintFlag = false;
+                }
+
+                if (moveAmount > 0.5f && playerStats.currentStamina > 0)
+                {
+                    sprintFlag = true;
+                }
             }
             else
             {
+                sprintFlag = false;
+
                 if (rollInputTimer > 0 && rollInputTimer < 0.5f)
                 {
-                    sprintFlag = false;
                     rollFlag = true;
                 }
 
@@ -156,6 +171,18 @@ namespace KA
                         return;
 
                     playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                }
+            }
+
+            if(lt_Input)
+            {
+                if(twoHandFlag)
+                {
+
+                }
+                else
+                {
+                    playerAttacker.HandleLTAction();
                 }
             }
         }
