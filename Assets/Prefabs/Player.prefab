@@ -349,6 +349,7 @@ MonoBehaviour:
   y_Input: 0
   x_Input: 0
   rb_Input: 0
+  lt_Input: 0
   critical_Attack_Input: 0
   rt_Input: 0
   jump_Input: 0
@@ -382,13 +383,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpell: {fileID: 11400000, guid: 9eedd7ae57d29d34e96e2ac47ec6b00d, type: 2}
   rightWeapon: {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
-  leftWeapon: {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
+  leftWeapon: {fileID: 11400000, guid: f1bc62a95bcf63e4785a1c9345701a6d, type: 2}
   unarmedWeapon: {fileID: 11400000, guid: 628519d461bbab646be6d08e565baa4a, type: 2}
   weaponsInRightHandSlots:
   - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
   - {fileID: 11400000, guid: d7276fba30da54d47bdfd5215ba79eb1, type: 2}
   weaponsInLeftHandSlots:
-  - {fileID: 11400000, guid: b75190eea5210fd43abd1358b40461ce, type: 2}
+  - {fileID: 11400000, guid: f1bc62a95bcf63e4785a1c9345701a6d, type: 2}
   - {fileID: 11400000, guid: d7276fba30da54d47bdfd5215ba79eb1, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
@@ -410,6 +411,8 @@ MonoBehaviour:
   riposteCollider: {fileID: 0}
   pendingCriticalDamage: 0
   canBeRiposted: 0
+  isParrying: 0
+  canBeParried: 0
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
   isInteracting: 0
@@ -621,6 +624,46 @@ PrefabInstance:
     - target: {fileID: 9016155482763569912, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.011165027
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.9606095
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2720661
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.05554088
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 173.524
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124805102715972297, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 148.402
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f581b8f5dacdc54b8e405d2157e1d8b, type: 3}

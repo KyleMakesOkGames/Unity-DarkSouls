@@ -14,6 +14,7 @@ namespace KA
         public bool y_Input;
         public bool x_Input;
         public bool rb_Input;
+        public bool lt_Input;
         public bool critical_Attack_Input;
         public bool rt_Input;
         public bool jump_Input;
@@ -80,6 +81,7 @@ namespace KA
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += inputActions => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.X.performed += i => x_Input = true;
                 inputActions.PlayerActions.CriticalAttack.performed += i => critical_Attack_Input = true;
+                inputActions.PlayerActions.LT.performed += i => lt_Input = true;
             }
 
             inputActions.Enable();
@@ -137,6 +139,18 @@ namespace KA
             if (rb_Input)
             {
                 playerAttacker.HandleRBAction();
+            }
+
+            if(lt_Input)
+            {
+                if(twoHandFlag)
+                {
+
+                }
+                else
+                {
+                    playerAttacker.HandleLTAction();
+                }
             }
 
             if(rt_Input)

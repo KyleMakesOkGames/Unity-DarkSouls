@@ -109,6 +109,7 @@ namespace KA
         }
 
         #region Handle Weapon Damage Colliders
+
         private void LoadLeftWeaponDamageCollider()
         {
             leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
@@ -123,20 +124,12 @@ namespace KA
 
         public void OpenDamageCollider()
         {
-            if(playerManager.isUsingRightHand)
-            {
-                rightHandDamageCollider.EnableDamageCollider();
-            }
-            else if(playerManager.isUsingLeftHand)
-            {
-                leftHandDamageCollider.EnableDamageCollider();
-            }
+            rightHandDamageCollider.EnableDamageCollider();
         }
 
         public void CloseDamageCollider()
         {
             rightHandDamageCollider.DisableDamageCollider();
-            leftHandDamageCollider.DisableDamageCollider();
         }
         #endregion
 

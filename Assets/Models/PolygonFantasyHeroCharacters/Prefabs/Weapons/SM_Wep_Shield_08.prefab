@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4928900545313618}
   - component: {fileID: 33305370185986654}
   - component: {fileID: 23550836146329596}
+  - component: {fileID: 5937175151114793009}
+  - component: {fileID: 6038688139674739943}
   m_Layer: 0
   m_Name: SM_Wep_Shield_08
   m_TagString: Untagged
@@ -81,3 +83,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5937175151114793009
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854577261971582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6684103, y: 0.97743833, z: 0.20072842}
+  m_Center: {x: 0.00000008940697, y: -0.094005585, z: 0}
+--- !u!114 &6038688139674739943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854577261971582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff936f6c73be684fb25a8ea664f9410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterManager: {fileID: 0}
+  currentWeaponDamage: 30

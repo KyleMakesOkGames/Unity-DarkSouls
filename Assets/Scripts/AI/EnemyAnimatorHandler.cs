@@ -22,6 +22,16 @@ namespace KA
             enemyManager.pendingCriticalDamage = 0;
         }
 
+        public void EnableCanBeRiposted()
+        {
+            enemyManager.canBeRiposted = true;
+        }
+
+        public void DisableCanBeRiposted()
+        {
+            enemyManager.canBeRiposted = false;
+        }
+
         public void AwardSoulsOnDeath()
         {
             PlayerStats playerStats = FindObjectOfType<PlayerStats>();

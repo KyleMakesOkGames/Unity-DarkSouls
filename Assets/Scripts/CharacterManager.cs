@@ -14,5 +14,7 @@ namespace KA
 
         [Header("Combat Flags")]
         public bool canBeRiposted;
+        public bool isParrying;
+        public bool canBeParried;
     }
 }

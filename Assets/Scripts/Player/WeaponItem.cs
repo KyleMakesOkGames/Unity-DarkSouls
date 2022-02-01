@@ -32,6 +32,9 @@ namespace KA
         public string TH_Heavy_Attack_1;
         public string TH_Heavy_Attack_2;
 
+        [Header("Weapon Art")]
+        public string weapon_Art;
+
         [Header("Stamina Drain Costs")]
         public int baseStamina;
         public float lightAttackMultiplier;
@@ -42,5 +45,6 @@ namespace KA
         public bool isPyroCaster;
         public bool isFaithCaster;
         public bool isMeleeWeapon;
+        public bool isShieldWeapon;
     }
 }

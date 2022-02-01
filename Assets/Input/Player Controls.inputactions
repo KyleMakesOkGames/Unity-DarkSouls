@@ -248,6 +248,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "LT",
+                    "type": "Button",
+                    "id": "fd781905-4bb2-44cb-aa64-f68451805ea2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -277,7 +285,7 @@
                     "name": "",
                     "id": "b5a94af9-f496-4696-a073-cd87c8acf2e5",
                     "path": "<Keyboard>/e",
-                    "interactions": "Tap",
+                    "interactions": "Tap(duration=0.2,pressPoint=0.5)",
                     "processors": "",
                     "groups": "",
                     "action": "RB",
@@ -435,6 +443,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Critical Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1dc9dd5-eb92-4278-b59c-115cd744ad7b",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
