@@ -7,11 +7,26 @@ namespace KA
     public class AttackState : State
     {
         public CombatStanceState combatStanceState;
-
         public EnemyAttackAction[] enemyAttacks;
         public EnemyAttackAction currentAttack;
-        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorHandler enemyAnimatorHandler)
+
+        bool isComboing = false;
+
+        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorHandler enemyAnimatorManager)
         {
+            if (enemyManager.isInteracting && enemyManager.canDoCombo == false)
+            {
+                return this;
+            }
+            else if (enemyManager.isInteracting && enemyManager.canDoCombo)
+            {
+                if (isComboing)
+                {
+                    enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
+                    isComboing = false;
+                }
+            }
+
             Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
             float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
@@ -19,7 +34,9 @@ namespace KA
             HandleRotateTowardsTarget(enemyManager);
 
             if (enemyManager.isPreformingAction)
+            {
                 return combatStanceState;
+            }
 
             if (currentAttack != null)
             {
@@ -37,13 +54,22 @@ namespace KA
                     {
                         if (enemyManager.currentRecoveryTime <= 0 && enemyManager.isPreformingAction == false)
                         {
-                            enemyAnimatorHandler.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
-                            enemyAnimatorHandler.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
-                            enemyAnimatorHandler.PlayTargetAnimation(currentAttack.actionAnimation, true);
+                            enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
+                            enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
+                            enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
                             enemyManager.isPreformingAction = true;
-                            enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
-                            currentAttack = null;
-                            return combatStanceState;
+
+                            if (currentAttack.canCombo)
+                            {
+                                currentAttack = currentAttack.comboAction;
+                                return this;
+                            }
+                            else
+                            {
+                                enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+                                currentAttack = null;
+                                return combatStanceState;
+                            }
                         }
                     }
                 }

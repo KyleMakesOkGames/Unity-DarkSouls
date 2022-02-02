@@ -10,10 +10,18 @@ namespace KA
         public PursueTargetState pursueTargetState;
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorHandler enemyAnimatorHandler)
         {
+            if (enemyManager.isInteracting)
+                return this;
+
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
             //potentially circle player or walk around them
 
             HandleRotateTowardsTarget(enemyManager);
+
+            if (enemyManager.isPreformingAction)
+            {
+                enemyAnimatorHandler.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
+            }
 
             if (enemyManager.currentRecoveryTime <= 0 && distanceFromTarget <= enemyManager.maximumAttackRange)
             {

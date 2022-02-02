@@ -9,6 +9,9 @@ namespace KA
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorHandler enemyAnimatorHandler)
         {
+            if (enemyManager.isInteracting)
+                return this;
+
             if (enemyManager.isPreformingAction)
             {
                 enemyAnimatorHandler.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
@@ -25,8 +28,6 @@ namespace KA
             }
 
             HandleRotateTowardsTarget(enemyManager);
-            enemyManager.navmeshAgent.transform.localPosition = Vector3.zero;
-            enemyManager.navmeshAgent.transform.localRotation = Quaternion.identity;
 
             if (distanceFromTarget <= enemyManager.maximumAttackRange)
             {
