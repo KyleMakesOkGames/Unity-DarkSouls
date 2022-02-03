@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PolygonFantasyHero_Texture_01_A
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e603b0446c7f2804db0c8dd0fb5c1af0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -107,8 +107,8 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_BodyArt: {r: 0.2283196, g: 0.5822246, b: 0.7573529, a: 1}
-    - _Color_Eyes: {r: 0.2283196, g: 0.5822246, b: 0.7573529, a: 1}
-    - _Color_Hair: {r: 0.2627451, g: 0.2117647, b: 0.1333333, a: 0}
+    - _Color_Eyes: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Hair: {r: 0.9622642, g: 0.8147212, b: 0.35101455, a: 0}
     - _Color_Leather_Primary: {r: 0.282353, g: 0.2078432, b: 0.1647059, a: 0}
     - _Color_Leather_Secondary: {r: 0.372549, g: 0.3294118, b: 0.2784314, a: 0}
     - _Color_Metal_Dark: {r: 0.1764706, g: 0.1960784, b: 0.2156863, a: 0}
