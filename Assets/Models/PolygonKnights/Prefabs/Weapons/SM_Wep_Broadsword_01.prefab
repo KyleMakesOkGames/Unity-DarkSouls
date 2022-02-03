@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 465914}
   - component: {fileID: 3393592}
   - component: {fileID: 2377326}
-  - component: {fileID: 64370003151808260}
+  - component: {fileID: 5609881034088969954}
+  - component: {fileID: 5234725386884027171}
   m_Layer: 0
   m_Name: SM_Wep_Broadsword_01
   m_TagString: Untagged
@@ -82,17 +83,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64370003151808260
-MeshCollider:
+--- !u!65 &5609881034088969954
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 43873980847829622, guid: e79c25ba848da8945a25117a1a1ea059, type: 2}
+  serializedVersion: 2
+  m_Size: {x: 0.24404019, y: 0.891413, z: 0.05988252}
+  m_Center: {x: -0.000000022351742, y: 0.32178885, z: 0.000000059604645}
+--- !u!114 &5234725386884027171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff936f6c73be684fb25a8ea664f9410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterManager: {fileID: 0}
+  currentWeaponDamage: 30

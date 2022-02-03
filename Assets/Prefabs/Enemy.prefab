@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722335776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.75}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 363082953}
@@ -226,8 +226,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65199655, y: 0.7955649, z: 0.14669108}
-  m_Center: {x: -0.01708284, y: -0.102217555, z: 0.07298839}
+  m_Size: {x: 0.65199655, y: 0.7955649, z: 0.30116987}
+  m_Center: {x: -0.01708284, y: -0.102217555, z: 0.15022779}
 --- !u!114 &2188735550097069934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3580593b89b43f4c8ccc48d27391bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthLevel: 10
+  healthLevel: 20
   maxHealth: 0
   currentHealth: 0
   staminaLevel: 0
